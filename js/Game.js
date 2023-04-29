@@ -5,7 +5,14 @@
 class Game {
     constructor(){
         this.missed = 0;
-        this.phrases = [];
+        this.phrases = [
+            new Phrase("RIDE OR DIE"),
+            new Phrase("TIME IS MONEY"),
+            new Phrase("NOW IS ALL"),
+            new Phrase("AS WITHIN SO WITHOUT"),
+            new Phrase("YOU MATTER")
+        ];
         this.activePhrase = null;
     }
 }
+
