@@ -14,5 +14,11 @@ class Game {
         ];
         this.activePhrase = null;
     }
+
+    getRandomPhrase() {
+        const randomItem = Math.floor(Math.random() * this.phrases.length);
+        return this.phrases[randomItem];
+    }
+
 }
 
