@@ -3,6 +3,7 @@
  * Game.js */
 
 class Game {
+
     constructor(){
         this.missed = 0;
         this.phrases = [
@@ -18,6 +19,10 @@ class Game {
     getRandomPhrase() {
         const randomItem = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[randomItem];
+    }
+
+    startGame(){
+        
     }
 
 }
