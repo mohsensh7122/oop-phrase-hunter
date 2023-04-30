@@ -22,7 +22,9 @@ class Game {
     }
 
     startGame(){
-        
+        document.getElementById('overlay').style.display = 'none';
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
     }
 
 }
