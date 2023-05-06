@@ -61,6 +61,24 @@ class Game {
         }
     };
 
-    
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+
+    gameOver(gameWon) {
+        const gameOverMessage = document.getElementById('game-over-message');
+        const screenOverlay = document.getElementById('overlay');
+
+        screenOverlay.style.display = 'block';
+
+        if(gameWon) {
+            gameOverMessage.textContent = 'You won!';
+            screenOverlay.className = 'win';
+        } else {
+            gameOverMessage.textContent = 'You Lost!';
+            screenOverlay.className = 'lose';
+        }
+    };
 
 }
