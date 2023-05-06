@@ -36,13 +36,22 @@ class Phrase {
      * @param (string) letter - Letter to check
      */
     checkLetter(letter) {
-        if(game.activePhrase.phrase.includes(letter.textContent)){
+        if(game.activePhrase.phrase.includes(letter)){
             return true;
         } else {
             return false;
         }
     };
 
+    showMatchedLetter(param){
+        const letters = document.querySelectorAll('.letter');
 
+        letters.forEach(letter => {
+            if(letter.textContent === param){
+                letter.classList.add('show');
+                letter.classList.remove('hide');
+            }
+        })
+    }
 
 }

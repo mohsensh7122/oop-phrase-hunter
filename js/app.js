@@ -9,7 +9,10 @@ const startBtn = document.getElementById('btn__reset');
 startBtn.addEventListener('click', e => {
     game = new Game();
     game.startGame();
+    
+    
 })
+
 
 // qwerty.addEventListener('click', e => {
 

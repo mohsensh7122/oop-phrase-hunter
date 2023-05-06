@@ -4,7 +4,7 @@
 
 class Game {
 
-    constructor(){
+    constructor() {
         this.missed = 0;
         this.phrases = [
             new Phrase("RIDE OR DIE"),
@@ -21,13 +21,25 @@ class Game {
         return this.phrases[randomItem];
     }
 
-    startGame(){
+    startGame() {
         document.getElementById('overlay').style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
 
-    
+    /**
+* Checks for winning move
+* @return {boolean} True if game has been won, false if game wasn't
+won
+*/
+    checkForWin() {
+        const hiddenLetters = document.querySelectorAll('.hide');
+
+        if(hiddenLetters > 0){
+            return false;
+        } else {
+            return true;
+        }
+    };
 
 }
-
