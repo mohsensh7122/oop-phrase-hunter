@@ -56,15 +56,15 @@ class Game {
         console.log(this.missed);
         hearts[this.missed - 1].src = 'images/lostHeart.png';
 
-        if (this.missed === 5){
+        if (this.missed === 5) {
             this.gameOver()
         }
     };
 
     /**
-    * Displays game over message
-    * @param {boolean} gameWon - Whether or not the user won the game
-    */
+     * Displays game over message
+     * @param {boolean} gameWon - Whether or not the user won the game
+     */
 
     gameOver(gameWon) {
         const gameOverMessage = document.getElementById('game-over-message');
@@ -72,7 +72,7 @@ class Game {
 
         screenOverlay.style.display = 'block';
 
-        if(gameWon) {
+        if (gameWon) {
             gameOverMessage.textContent = 'You won!';
             screenOverlay.className = 'win';
         } else {
@@ -81,4 +81,14 @@ class Game {
         }
     };
 
+    /**
+     * Handles onscreen keyboard button clicks
+     * @param (HTMLButtonElement) button - The clicked button element
+     */
+    handleInteraction(button) {
+
+        if(button.tagName === 'BUTTON'){
+            console.log(button);
+        }
+    };
 }
