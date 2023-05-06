@@ -27,5 +27,7 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
     }
 
+    
+
 }
 

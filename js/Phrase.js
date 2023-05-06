@@ -3,13 +3,13 @@
  * Phrase.js */
 
 class Phrase {
-    constructor(phrase){
+    constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
 
     /**
-    * Display phrase on game board
-    */
+     * Display phrase on game board
+     */
     addPhraseToDisplay() {
         const ul = document.getElementById('phrase').querySelector('ul');
 
@@ -17,11 +17,11 @@ class Phrase {
         // console.log(phrase);
         for (let i = 0; i < phrase.length; i++) {
             let li = document.createElement("li");
-            if (phrase[i] === ' '){
+            if (phrase[i] === ' ') {
                 li.className = "space";
                 ul.appendChild(li);
                 li.innerText = ' ';
-                
+
             } else {
                 li.className = `hide letter ${phrase[i]}`;
                 ul.appendChild(li);
@@ -30,7 +30,19 @@ class Phrase {
 
         }
     };
+
+    /**
+     * Checks if passed letter is in phrase
+     * @param (string) letter - Letter to check
+     */
+    checkLetter(letter) {
+        if(game.activePhrase.phrase.includes(letter.textContent)){
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+
+
 }
-
-
-
