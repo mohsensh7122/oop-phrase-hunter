@@ -17,6 +17,7 @@ startBtn.addEventListener('click', e => {
 qwerty.addEventListener('click', e => {
 
     let clickedButton = e.target;
+
     
     game.handleInteraction(clickedButton);
    

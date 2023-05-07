@@ -36,7 +36,7 @@ class Phrase {
      * @param (string) letter - Letter to check
      */
     checkLetter(letter) {
-        if(game.activePhrase.phrase.includes(letter)){
+        if(game.activePhrase.phrase.includes(letter.textContent)){
             return true;
         } else {
             return false;
@@ -47,7 +47,7 @@ class Phrase {
         const letters = document.querySelectorAll('.letter');
 
         letters.forEach(letter => {
-            if(letter.textContent === param){
+            if(letter.textContent === param.textContent){
                 letter.classList.add('show');
                 letter.classList.remove('hide');
             }

@@ -86,9 +86,23 @@ class Game {
      * @param (HTMLButtonElement) button - The clicked button element
      */
     handleInteraction(button) {
-
+    
         if(button.tagName === 'BUTTON'){
             console.log(button);
+            button.disabled = true;
+            console.log(game.activePhrase)
+
+            
+            // game.activePhrase.showMatchedLetter('a');
+
+            
+            if(game.activePhrase.checkLetter(button)){
+                button.classList.add('chosen');
+                game.activePhrase.showMatchedLetter(button)
+            } else {
+                button.classList.add('wrong');
+                game.removeLife()
+            }
         }
     };
 }
