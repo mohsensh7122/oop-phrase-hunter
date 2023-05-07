@@ -36,10 +36,10 @@ class Game {
     checkForWin() {
         const hiddenLetters = document.querySelectorAll('.hide');
 
-        if (hiddenLetters > 0) {
-            return false;
-        } else {
+        if (hiddenLetters.length === 0) {
             return true;
+        } else {
+            return false;
         }
     };
 
@@ -88,20 +88,28 @@ class Game {
     handleInteraction(button) {
     
         if(button.tagName === 'BUTTON'){
-            console.log(button);
+          
             button.disabled = true;
-            console.log(game.activePhrase)
+
 
             
             // game.activePhrase.showMatchedLetter('a');
 
-            
+           
             if(game.activePhrase.checkLetter(button)){
                 button.classList.add('chosen');
-                game.activePhrase.showMatchedLetter(button)
+                game.activePhrase.showMatchedLetter(button);
+                console.log(game.checkForWin())
+                
+                
+                
             } else {
                 button.classList.add('wrong');
                 game.removeLife()
+            }
+
+            if(game.checkForWin()){
+                game.gameOver(game.checkForWin());
             }
         }
     };
